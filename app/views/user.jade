@@ -1,0 +1,74 @@
+include ./includes/header
+body
+	section.loader
+		span.loaders.icon.fontawesome-spinner
+	//- .overlay
+	.slider
+		section.spaces.page.avail(style='display:block;opacity:1;')
+			h1(style="padding-bottom: 0; margin-bottom: 0")
+				|YOUR SPACES FOR RENT
+				label.c
+					.icon.fontawesome-filter
+					input#filter-button(type='checkbox')
+					span Filter
+				ul.filters
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Swimming Pool
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Tennis Court
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Bar
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Porch
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Fire Pit
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Grill
+			//- h1= data
+			each item in data
+				article.space(style="opacity:1;display:block;position:relative;margin-top:-50px")
+					.picture-container
+						.picture.cool(img = "#{item.images}")
+					.container
+						span.title= item.title
+						span.location= item.street
+						span.cta  $ #{item.price}
+						.delete(style="background:#C0392B;", sid="#{item.sid}") DELETE!
+						hr
+						p.description= item.desc
+						ul.features
+							each feature in item.features
+								li.feature= feature
+				br
+				br
+				br
+
+	.header
+		a(href='/')
+			.icon.entypo-home
+		a(href='/user')
+			.icon.entypo-user

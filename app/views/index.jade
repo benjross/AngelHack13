@@ -1,0 +1,265 @@
+include ./includes/header
+body
+	section.loader
+		span.loaders.icon.fontawesome-spinner
+	//- .overlay
+	section.landing-header
+		h1
+			| I am
+			span.looker
+				select.titler
+					option looking for
+					option renting out
+				.icon.entypo-down-dir
+			|a space
+			br
+			| in
+			span.location
+				.icon.fontawesome-map-marker
+				input#loc(placeholder='San Jose, CA')
+			|on
+			span.date
+				.icon.fontawesome-calendar
+				input.date#date(placeholder='27th June 2013')
+
+		button.find
+			| find
+
+	.slider
+		section.spaces.page.avail
+			h1
+				|SPACES AVAILABLE
+				label.c
+					.icon.fontawesome-filter
+					input#filter-button(type='checkbox')
+					span Filter
+				ul.filters
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Swimming Pool
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Tennis Court
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Bar
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Porch
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Fire Pit
+					li.filter
+						label
+							input(type='checkbox', value='name')
+							.checkbox
+								.checked
+							span Grill
+			//- article.space
+			//- 	.picture-container
+			//- 		.picture
+			//- 	.container
+			//- 		span.title Sweet Pool Y'all
+			//- 		span.location 1212 First Street, San Jose, CA
+			//- 		span.cta 50$
+			//- 		button.cta.rent Rent!
+			//- 		hr
+			//- 		p.description
+			//- 			| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, distinctio, at, ea voluptatem similique maiores fugit nostrum recusandae veniam magni ex consectetur expedita voluptatibus commodi asperiores tenetur quibusdam nulla inventore.
+			//- 		ul.features
+			//- 			li.feature Pool
+			//- 			li.feature Basketball court
+			//- 			li.feature Cute dolphins
+			//- 			li.feature Quidditch hoops
+
+		section.payment-container.payment.page
+			h1 PAYMENT
+			section.payment-form
+				form(name="input",action="confirmation.html",method="post")
+
+					ul.checkboxes
+						li.checkbox
+							label
+								input#cardtype(type='radio', name='name', value='visa', checked)
+								.checkbox
+									.checked
+								span Visa
+						li.checkbox
+							label
+								input#cardtype(type='radio', name='name', value='mastercard')
+								.checkbox
+									.checked
+								span Mastercard
+						li.checkbox
+							label
+								input#cardtype(type='radio', name='name', value='discover')
+								.checkbox
+									.checked
+								span Discover
+					br
+
+					h1 Personal and Card Information
+					//- hr
+					input#firstname(type="text", name="firstname", placeholder="First Name")
+					input#lastname(type="text", name="lastname", placeholder="Last Name")
+					input#emailss(type="text", name="email", placeholder="Email")
+					br
+					input#cardnumber(type="text", name="cardnumber", placeholder="Card Number")
+					input#csc(type="text", name="csc", placeholder="CVV")
+					span.three EXP
+					input.three#month(type="text", name="csc", placeholder="MM")
+					input.three#year(type="text", name="csc", placeholder="YYYY")
+
+					hr
+					h1 Address
+					input#line1(type="text",name="line1", placeholder="LINE1")
+					input#line2(type="text",name="line2", placeholder="LINE2")
+					br
+					input#city(type="text",name="city", placeholder="City")
+					select#State(name="State")
+						option(value="",selected="selected") Select State
+						option(value="AL") Alabama
+						option(value="AK") Alaska
+						option(value="AZ") Arizona
+						option(value="AR") Arkansas
+						option(value="CA") California
+						option(value="CO") Colorado
+						option(value="CT") Connecticut
+						option(value="DE") Delaware
+						option(value="DC") District Of Columbia
+						option(value="FL") Florida
+						option(value="GA") Georgia
+						option(value="HI") Hawaii
+						option(value="ID") Idaho
+						option(value="IL") Illinois
+						option(value="IN") Indiana
+						option(value="IA") Iowa
+						option(value="KS") Kansas
+						option(value="KY") Kentucky
+						option(value="LA") Louisiana
+						option(value="ME") Maine
+						option(value="MD") Maryland
+						option(value="MA") Massachusetts
+						option(value="MI") Michigan
+						option(value="MN") Minnesota
+						option(value="MS") Mississippi
+						option(value="MO") Missouri
+						option(value="MT") Montana
+						option(value="NE") Nebraska
+						option(value="NV") Nevada
+						option(value="NH") New Hampshire
+						option(value="NJ") New Jersey
+						option(value="NM") New Mexico
+						option(value="NY") New York
+						option(value="NC") North Carolina
+						option(value="ND") North Dakota
+						option(value="OH") Ohio
+						option(value="OK") Oklahoma
+						option(value="OR") Oregon
+						option(value="PA") Pennsylvania
+						option(value="RI") Rhode Island
+						option(value="SC") South Carolina
+						option(value="SD") South Dakota
+						option(value="TN") Tennessee
+						option(value="TX") Texas
+						option(value="UT") Utah
+						option(value="VT") Vermont
+						option(value="VA") Virginia
+						option(value="WA") Washington
+						option(value="WV") West Virginia
+						option(value="WI") Wisconsin
+						option(value="WY") Wyoming
+					.icon.entypo-down-dir
+					input.zip#zipcode(type="text", name="zipcode", placeholder="ZIP")
+					br
+					input#checkout(type="submit", value="SUBMIT")
+
+		section.spaces.listing.page
+			h1 LIST A SPACE
+			article.space
+				.picture-container
+					.picture#filepicker_button
+				.container
+					//- span.title
+					input.title#space_title(type='text', placeholder='Enter a title')
+					//- span.location
+					br
+					input.address.street#street_one(type='text', placeholder='122 Street')
+					input.address.city#city2(type='text', placeholder='San Jose')
+					input.address.state#state(type='text', placeholder='CA')
+					input.address.zipcode#zipcode(type='text', placeholder='94089')
+					//- span.cta
+					input.cost#price(type='text', placeholder='$$')
+					button.cta.checkout LIST!
+					hr
+					textarea.description#space_desc(placeholder='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, distinctio, at, ea voluptatem similique maiores fugit nostrum recusandae veniam magni ex consectetur expedita voluptatibus commodi asperiores tenetur quibusdam nulla inventore.')
+					br
+					input.date#start-date(type='text', placeholder='Start Date (MM-DD-YYYY)')
+					ul.filters
+						li.filter
+							label
+								input#feature_pool(type='checkbox', value='name')
+								.checkbox
+									.checked
+								span Swimming Pool
+						li.filter
+							label
+								input#feature_tennis(type='checkbox', value='name')
+								.checkbox
+									.checked
+								span Tennis Court
+						li.filter
+							label
+								input#feature_bar(type='checkbox', value='name')
+								.checkbox
+									.checked
+								span Bar
+						li.filter
+							label
+								input#feature_porch(type='checkbox', value='name')
+								.checkbox
+									.checked
+								span Porch
+						li.filter
+							label
+								input#feature_fire_pit(type='checkbox', value='name')
+								.checkbox
+									.checked
+								span Fire Pit
+						li.filter
+							label
+								input#feature_grill(type='checkbox', value='name')
+								.checkbox
+									.checked
+								span Grill
+
+		section.payment-container.page.success-message
+			h1
+				| SUCCESS!
+				br
+				.icon.fontawesome-ok-sign
+				br
+				br
+				br
+				a(href='/')
+					button GO HOME
+	.header
+		a(href='/')
+			.icon.entypo-home
+		a(href='/user')
+			.icon.entypo-user
